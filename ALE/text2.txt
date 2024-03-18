@@ -1,0 +1,16 @@
+ {
+      "type": "Microsoft.Sql/servers/databases",
+      "apiVersion": "2020-02-02-preview",
+      "name": "[variables('databaseName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Basic",
+        "tier": "Basic",
+        "capacity": 5
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlServerName'))]"
+      ],
+      "tags": {
+        "displayName": "[variables('databaseName¥')]"
+      }
